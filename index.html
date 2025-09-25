@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Line Quest</title>
+    <style>
+      /* Minimal reset + utility styles */
+      body { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; padding:0; background:#f3f4f6; color:#111827; }
+      .container { max-width:1100px; margin:0 auto; padding:24px; }
+      button { cursor:pointer; }
+      /* Hall of Fame glow */
+      .hof-glow { background: linear-gradient(90deg, rgba(255,236,179,0.12), rgba(255,244,199,0.06)); padding:12px; border-radius:8px; }
+      .sparkle { background: linear-gradient(90deg, #fff5b1, #ffd6a5); -webkit-background-clip: text; background-clip: text; color: transparent; animation: shimmer 2.5s linear infinite; }
+      @keyframes shimmer { 0%{background-position:0%}50%{background-position:100%}100%{background-position:0%} }
+      .crown { margin-right:6px; }
+      /* Simple responsive grid */
+      .grid { display:grid; gap:12px; }
+      @media(min-width:768px){ .grid-2 { grid-template-columns: 1fr 320px; } }
+      .card { background:white; padding:12px; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,0.06); }
+      .btn { background:#4f46e5; color:white; padding:8px 12px; border-radius:6px; border:none; }
+      .muted-btn { background:#e5e7eb; border:none; padding:8px 10px; border-radius:6px; }
+      input[type=text] { padding:8px; border-radius:6px; border:1px solid #d1d5db; }
+      table { width:100%; border-collapse:collapse; }
+      th, td { text-align:left; padding:6px 8px; border-bottom:1px solid #eef2ff; font-size:14px; }
+      .carousel { display:flex; gap:12px; overflow:hidden; align-items:center; padding:12px; }
+      .badge { display:inline-flex; gap:8px; align-items:center; padding:8px 12px; border-radius:20px; background:rgba(255,255,255,0.08); box-shadow:0 1px 6px rgba(0,0,0,0.06); }
+      /* fireworks canvas */
+      #fireworks { position:fixed; left:0; top:0; width:100%; height:100%; pointer-events:none; z-index:2000; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <canvas id="fireworks"></canvas>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
